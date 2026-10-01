@@ -61,7 +61,7 @@ section{margin-top:34px}
 .chip[open] .chip-toggle{color:var(--accent)}
 .chip[open] .chip-toggle::before{content:'–'}
 .chip-detail{font-family:var(--font-ui);font-size:0.82rem;color:var(--ink);line-height:1.75;
-  margin-top:10px;padding-top:10px;border-top:1px dashed var(--line)}
+  margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);cursor:pointer}
 
 .flow-arrow{text-align:center;color:var(--muted);font-size:1.3rem;padding:6px 0;font-family:var(--font-ui)}
 
@@ -301,3 +301,12 @@ footer{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);
 <footer>
   来源：《和悉达多散步：遇见〈金刚经〉》，费勇 著 · 学习笔记见 C:\My_Coding_Projects\learning\佛学\notes.md · 2026-09-30
 </footer>
+
+<script>
+document.querySelectorAll('.chip-detail').forEach(function(el){
+  el.addEventListener('click', function(){
+    var d = el.closest('details');
+    if(d) d.open = false;
+  });
+});
+</script>
